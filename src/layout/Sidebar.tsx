@@ -7,6 +7,7 @@ interface SidebarProps {
   toggleSidebar: () => void;
   menuItems: { path: string; label: string; icon: React.ReactNode }[];
 }
+
 const Sidebar: React.FC<SidebarProps> = ({
   isSidebarOpen,
   toggleSidebar,
@@ -26,12 +27,11 @@ const Sidebar: React.FC<SidebarProps> = ({
         </span>
         <button
           onClick={toggleSidebar}
-          className="text-white focus: outline-none"
+          className="text-white focus:outline-none"
         >
           <FiMenu size={24} />
         </button>
       </div>
-
       <nav className="mt-4">
         {menuItems.map((item) => (
           <NavLink
@@ -43,7 +43,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               }`
             }
           >
-            <span className="text-x1">{item.icon}</span>
+            <span className="text-xl">{item.icon}</span>
             <span className={`${isSidebarOpen ? 'block' : 'hidden'}`}>
               {item.label}
             </span>

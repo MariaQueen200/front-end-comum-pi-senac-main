@@ -12,16 +12,13 @@ import UserForm from './UserForm';
 import ProtectedRoute from '../ProtectedRoute';
 import RestrictedLayout from '../layout/RestrictedLayout';
 
-/*Componente= sempre retorna um html, os componentes sempre terminam em X, exemplo: tsx, o tsx é um componente e o que não
-termina em X não é um componente.
-Class= é uma palavra reservada. Um ponto só */
-
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Rota de Login */}
+        {/* Rota de login */}
         <Route path="/login" element={<Login />} />
+
         {/* Rotas protegidas */}
         <Route element={<ProtectedRoute />}>
           <Route element={<RestrictedLayout />}>
@@ -32,7 +29,9 @@ function App() {
             <Route path="/users/edit/:id" element={<UserForm isEditing />} />
           </Route>
         </Route>
-        <Route path="*" element={<Navigate to="/login" replace />} />
+
+        {/* Rota para páginas não encontradas */}
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </Router>
   );
