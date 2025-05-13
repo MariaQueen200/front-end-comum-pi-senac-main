@@ -5,7 +5,7 @@ interface TopBarProps {
   toggleSidebar: () => void;
 }
 
-const Topbar: React.FC<TopBarProps> = ({ toggleSidebar }) => {
+const TopBar: React.FC<TopBarProps> = ({ toggleSidebar }) => {
   return (
     <div className="bg-white shadow p-4 flex items-center justify-between">
       <h1 className="text-xl font-bold">Área Restrita</h1>
@@ -18,4 +18,5 @@ const Topbar: React.FC<TopBarProps> = ({ toggleSidebar }) => {
     </div>
   );
 };
-export default Topbar;
+
+export default TopBar;

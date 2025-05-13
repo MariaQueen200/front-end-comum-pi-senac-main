@@ -1,5 +1,5 @@
 import React from 'react';
-import Topbar from './Topbar';
+import TopBar from './Topbar';
 import ContentArea from './ContentArea';
 
 interface MainContentProps {
@@ -9,7 +9,7 @@ interface MainContentProps {
 const MainContent: React.FC<MainContentProps> = ({ toggleSidebar }) => {
   return (
     <div className="flex flex-col flex-1">
-      <Topbar toggleSidebar={toggleSidebar} />
+      <TopBar toggleSidebar={toggleSidebar} />
       <ContentArea />
     </div>
   );
